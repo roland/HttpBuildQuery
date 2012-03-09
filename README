@@ -1,0 +1,22 @@
+HttpBuildQuery
+====================
+
+What it is?
+----------
+
+This is a C# version of the http://php.net/http_build_query. 
+I needed had a hard time finding a replacement as I was working with the MailChimp API and wrote this as a helper.
+
+
+Usage
+----------
+
+HttpBuildQueryHelper.Format(HttpBuildQueryHelper.Convert(myObject))
+
+HttpBuildQueryHelper.Convert - recursively uses reflection to create a strucutre that HttpBuildQueryHelper.Format can use.
+
+You can also use anonymous types:
+
+HttpBuildQueryHelper.Format(HttpBuildQueryHelper.Convert(new { myKey = new int[] {1,2,3} } ))
+
+which will generate "myKey[0]=1&myKey[1]=2&myKey[2]=3".
