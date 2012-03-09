@@ -5,7 +5,7 @@ What it is?
 ----------
 
 This is a C# version of the http://php.net/http_build_query. 
-I needed had a hard time finding a replacement as I was working with the MailChimp API and wrote this as a helper.
+I had a hard time finding a replacement for http_build_query in .NET as I was working with the MailChimp API and wrote this as a helper.
 
 
 Usage
