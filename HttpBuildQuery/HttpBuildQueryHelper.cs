@@ -83,7 +83,9 @@ namespace HttpBuildQuery
             if (depthLimit > 5) return obj; // prevent recursion from not ending
             if (obj == null) return obj;
             Type type = obj.GetType();
-            if (IsStringable(obj) || IsStringableArray(obj)) return obj;
+            if (IsStringable(obj) ||
+                IsStringableArray(obj) ||
+                type.GetProperties().Any(p => p.GetIndexParameters().Length > 0)) return obj;
 
             if (type.IsArray)
             {
